@@ -1,30 +1,28 @@
 #include <stdio.h>
 int main(void)
 {
-  int score;
-  float grade;
+  float score;
   printf("Input score: ") ;
-  scanf("%d",&score);
-  grade = score/10.0;
+  scanf("%f",&score);
   if (score >=0 && score <=100){
-    switch(score/10){
-      case 10: case 9: case 8: printf("A");break;
-      case 7: if(grade>=7.5){
-                printf("B+");
+    switch((int)score/10){
+      case 10: case 9: case 8: printf("Grade = A");break;
+      case 7: if(score>=7.5){
+                printf("Grade = B+");
               }else{
-                printf("B");
+                printf("Grade = B");
               };break;
-      case 6: if(grade>=6.5){
-                printf("C+");
+      case 6: if(score>=6.5){
+                printf("Grade = C+");
               }else{
-                printf("C");
+                printf("Grade = C");
               };break;
-      case 5: if(grade>=5.5){
-                printf("D+");
+      case 5: if(score>=5.5){
+                printf("Grade = D+");
               }else{
-                printf("D");
+                printf("Grade = D");
               };break;
-      default : printf("F");break;
+      default : printf("Grade = F");break;
     }
   }else{
     printf("Please enter score 0-100");
